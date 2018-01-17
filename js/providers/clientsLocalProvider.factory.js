@@ -8,7 +8,11 @@
     ClientsLocalProvider.$inject = ['$http'];
     function ClientsLocalProvider($http) {
         var service = {
-            getAll:getAll
+            getAll: getAll,
+            get: get,
+            set: set,
+            update: update,
+            remove: remove
         };
 
         return service;
@@ -35,7 +39,7 @@
         }
 
         function set(clients) {
-            localStorage.client = JSON.stringify(clients);
+            localStorage.clients = JSON.stringify(clients);
         }
 
         function update(updatedClient) {

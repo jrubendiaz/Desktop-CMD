@@ -1,0 +1,6 @@
+<ul ng-if="clientsManager.clients.length > 0" class="list-group">
+    <li ng-repeat="client in clientsManager.clients" class="list-group-item">
+        <span class="badge">{{client.products.length}}</span>
+        {{client.name}} {{client.subname}}
+    </li>
+</div>
