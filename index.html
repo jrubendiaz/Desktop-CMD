@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desktop-CRM</title>
     <link rel="stylesheet" href="js/libs/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body ng-app="DesktopCRM">
     <header>
         <!-- Header code here -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Desktop CRM</a>
+                </div>
+                <a class="navbar-right" href="#!/newClient"> <button type="button" class="btn btn-default navbar-btn"> Nuevo cliente </button></a>
+            </div>
+        </nav>
     </header>
 
-    <main ng-view></main>
+    <main class="wrapper" ng-view></main>
     <!-- Third party libraries -->
     <script src="js/libs/bootstrap.js"></script>
     <script src="js/libs/angular.js"></script>
