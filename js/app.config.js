@@ -8,12 +8,12 @@
     function config($routeProvider, $locationProvider){
         $routeProvider
             .when("/", {
-                controller: 'clientsManagerPanel',
+                controller: 'clientsManagerPanelController',
                 templateUrl: 'views/clientsManagerPanel.html',
                 controllerAs: 'clientsManager'
             })
             .when("/client:id", {
-                controller: 'clientProfile',
+                controller: 'clientProfileController',
                 templateUrl: 'views/clientProfile.html',
                 controllerAs: 'clientProfile'
             })

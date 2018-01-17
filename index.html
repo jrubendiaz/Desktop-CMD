@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desktop-CRM</title>
-    <link rel="stylesheet" href="libs/bootstrap.css">
+    <link rel="stylesheet" href="js/libs/bootstrap.css">
 </head>
 <body ng-app="DesktopCRM">
     <header>
@@ -14,16 +14,18 @@
 
     <main ng-view></main>
     <!-- Third party libraries -->
-    <script src="libs/bootsrap.js"></script>
-    <script src="libs/angular.js"></script>
-    <script src="libs/angular-route.js"></script>
+    <script src="js/libs/bootstrap.js"></script>
+    <script src="js/libs/angular.js"></script>
+    <script src="js/libs/angular-route.js"></script>
 
     <!-- Desktop-CRM App -->
     <script src="js/app.config.js"></script>
 
     <!-- Providers -->
+    <script src="js/providers/clientsLocalProvider.factory.js"></script>
 
     <!-- Controllers -->
+    <script src="js/controllers/clientsManagerPanel.controller.js"></script>
 
     <!-- Components -->
 </body>
