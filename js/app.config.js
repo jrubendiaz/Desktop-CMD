@@ -14,7 +14,7 @@
             })
             .when("/client:id", {
                 controller: 'clientProfile',
-                templateUrl: 'views/clientsProfile.html',
+                templateUrl: 'views/clientProfile.html',
                 controllerAs: 'clientProfile'
             })
     }
