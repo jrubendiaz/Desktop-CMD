@@ -17,5 +17,10 @@
                 templateUrl: 'views/clientProfile.html',
                 controllerAs: 'clientProfile'
             })
+            .when("/newClient", {
+                controller: 'newClientController',
+                templateUrl: 'views/newClient.html',
+                controllerAs: 'newClient'
+            })
     }
 })();

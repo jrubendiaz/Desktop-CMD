@@ -1,0 +1,39 @@
+<div class="form-group row">
+    <div class="col-lg-offset-4 col-lg-3 col-sm-offset-4 col-sm-3">
+        <div class="col-lg-12 col-sm-12">
+            <div class="thumbnail">
+                <img ng-src="{{newClient.photo || '/data/default/user.png'}}" alt="...">
+            </div>
+            <div class="input-group">
+                <label for="photo-profile">Foto de perfil</label>
+                <input id="photo" name="photo" ng-change="newClient.managePhoto()" ng-model="newClient.photo" type="file" name="photo-profile" id="photo-profile">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12 pt-32">
+        <div class="col-lg-4 col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="name">Nombre</span>
+                <input ng-change="newClient.manageChanges()" ng-model="newClient.name" type="text" class="form-control" placeholder="Nombre" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Apellidos</span>
+                <input ng-model="newClient.subname" type="text" class="form-control" placeholder="Apellidos" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">DNI</span>
+                <input ng-model="newClient.dni" type="text" class="form-control" placeholder="DNI" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-lg-offset-3 col-lg-3 col-sm-offset-3 col-sm-3 pt-32">
+            <a href="#!/" class="btn btn-default btn-lg btn-block">Cancelar</a>
+        </div>
+        <div class="col-lg-3 col-sm-3 pt-32">
+            <button ng-click="newClient.managePhoto()" class="btn btn-primary btn-lg btn-block">Crear</button>
+        </div>
+    </div>
+</div>
