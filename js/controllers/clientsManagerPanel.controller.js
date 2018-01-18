@@ -5,8 +5,8 @@
         .module('DesktopCRM')
         .controller('clientsManagerPanelController', clientsManagerPanelController);
 
-    clientsManagerPanelController.$inject = ['ClientsLocalProvider'];
-    function clientsManagerPanelController(clientsLocalProvider) {
+    clientsManagerPanelController.$inject = ['$http', 'ClientsLocalProvider'];
+    function clientsManagerPanelController($http, clientsLocalProvider) {
         var vm = this;
 
 
@@ -17,6 +17,10 @@
         function activate() {
             vm.clients = clientsLocalProvider.getAll();
             console.log(vm.clients);
+            const api_res = $http.get('http://127.0.0.1:80/api/api/clients');
+            api_res.then(res => {
+                console.log(res);
+            })
         }
 
         function saveClients() {
