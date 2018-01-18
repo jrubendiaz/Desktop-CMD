@@ -7,9 +7,16 @@ Aplicación HTML5 orientada a escritorio para gestionar clientes de un estableci
 
 Para poder arrancar el proyecto necesitaremos una distribución Apache (MySql + PHP).
 
-XAMMP
+XAMMP:
+
 ```
 https://www.apachefriends.org/es/index.html
+```
+
+Cómo instalar XAMPP:
+
+```
+https://www.apachefriends.org/es/faq_windows.html
 ```
 
 ### Installing
@@ -24,7 +31,13 @@ Situados en el directorio htdocs de nuestra distribución XAMPP:
 git clone https://github.com/jrubendiaz/Desktop-CRM.git
 ```
 
-Acceder al panel principal:
+Iniciar XAMPP:
+
+```
+https://www.apachefriends.org/es/faq_windows.html
+```
+
+Acceder al panel principal del CRM:
 
 ```
 localhost/Desktop-CRM
