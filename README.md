@@ -2,12 +2,6 @@
 
 Aplicación HTML5 orientada a escritorio para gestionar clientes de un establecimiento
 
-## Getting Started
-
-
-```
-git clone https://github.com/jrubendiaz/Desktop-CRM.git
-```
 
 ### Prerequisites
 
@@ -20,10 +14,17 @@ https://www.apachefriends.org/es/index.html
 
 ### Installing
 
-** Despliegue en local
+** Despliegue en local **
+
 Para poder arrancar el proyecto sólo necesitaremos realizar el git clone del repositorio dentro de la carpeta htdocs de nuestra distribución Apache (XAMMP sugerido).
 
-Acceder al panel principal
+Situados en el directorio htdocs de nuestra distribución XAMPP:
+
+```
+git clone https://github.com/jrubendiaz/Desktop-CRM.git
+```
+
+Acceder al panel principal:
 
 ```
 localhost/Desktop-CRM
@@ -35,6 +36,6 @@ localhost/Desktop-CRM
 
 ## Authors
 
-* **Rubén Díaz** - *Initial work* - [jrubendiaz](https://github.com/jrubendiaz)
+* **Rubén Díaz** - [jrubendiaz](https://github.com/jrubendiaz)
 
 
