@@ -52,7 +52,6 @@
 
         function updateClient(client) {
             let aux_url = _url + "/" + client.id;
-            console.log(client);
             let cli = JSON.stringify(client);
 
             return $http.put(aux_url, cli).then(res => {
@@ -64,7 +63,6 @@
             let aux_url = _url + "/" + c_id;
 
             $http.delete(aux_url).then(res => {
-                console.log(res);
             })
         }
     }

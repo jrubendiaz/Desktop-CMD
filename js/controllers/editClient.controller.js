@@ -21,21 +21,20 @@
 
         function activate() {
             vm.client.id = $routeParams.id;
-            console.log(vm.client.id);
             getDetails();
         }
 
         function getDetails() {
             let api_res = clientsHTTPProvider.getClientDetails(vm.client.id).then(res => {
                 vm.client = res;
-                console.log(vm.client);
             })
         }
 
         function editClient() {
             clientsHTTPProvider.update(vm.client).then(res => {
-                console.log(res);
                 getDetails();
+                let redirect = window.location.origin + "" + window.location.pathname;
+                window.location.href = redirect;
             });
         }
     }

@@ -37,6 +37,12 @@ Iniciar XAMPP:
 https://www.apachefriends.org/es/faq_windows.html
 ```
 
+Inicializar la Base de Datos:
+
+```
+localhost/Desktop-CRM/api/init
+```
+
 Acceder al panel principal del CRM:
 
 ```

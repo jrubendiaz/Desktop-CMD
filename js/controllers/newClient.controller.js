@@ -32,12 +32,12 @@
                 productos: vm.productos || "[]"
             }
             clientsHTTPProvider.add(cli).then(res => {
-                console.log(res);
+                let redirect = window.location.origin + "" + window.location.pathname;
+                window.location.href = redirect;
             })
         }
 
         function manageChanges() {
-            console.log(vm.name, vm.subname, vm.photo, vm.dni);
         }
 
         function hexToBase64(str) {
@@ -45,14 +45,12 @@
         }
 
         function managePhoto() {
-            console.log("HOLA");
             let photo = document.getElementById("photo").files[0];
             let photoBinary = "";
             let reader = new FileReader();
 
             //Photo preview
             vm.photo = window.URL.createObjectURL(photo);
-            console.log(vm.photo);
             reader.onloadend = e => {
                 photoBinary = e.target.result;
                 //manage binary data

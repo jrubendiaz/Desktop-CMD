@@ -1,5 +1,9 @@
 <?php
 /*
+*   Init DB
+*/
+$app->get('/init', 'initDB');
+/*
 *   GET clients to retrived - all clients in DesktopCRM
 */
 $app->get('/clients', 'getAllClients');
