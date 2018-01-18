@@ -5,9 +5,15 @@
         .module('DesktopCRM')
         .controller('clientsManagerPanelController', clientsManagerPanelController);
 
-    clientsManagerPanelController.$inject = ['$http', 'ClientsLocalProvider'];
-    function clientsManagerPanelController($http, clientsLocalProvider) {
+    clientsManagerPanelController.$inject = ['$http', 'ClientsLocalProvider', 'clientsHTTPProvider'];
+    function clientsManagerPanelController($http, clientsLocalProvider, clientsHTTPProvider) {
         var vm = this;
+
+        // Variables
+        vm.localClients = [];
+        vm.httpClients = [];
+        vm.clients = [];
+        // Functions
 
 
         activate();
@@ -15,30 +21,50 @@
         ////////////////
 
         function activate() {
-            vm.clients = clientsLocalProvider.getAll();
-            console.log(vm.clients);
-            const api_res = $http.get('http://127.0.0.1:80/api/api/clients');
+            /*
+            *   GET all clients from http request
+            */
+            getAllClients();
+            // Update Client TEST
+            //updateClient();
+
+            // Delete Client TEST
+            deleteClient(3);
+        }
+
+        function getAllClients() {
+            let api_res =clientsHTTPProvider.getAll();
+
             api_res.then(res => {
-                console.log(res);
+                vm.clients = res;
             })
         }
 
-        function saveClients() {
-            clientsLocalProvider.set(vm.clients);
+        function updateClient(c) {
+            let cli = c || {
+                id: 3,
+                name: "User Mod",
+                subname: "Test",
+                dni: "47885566C",
+                photo: "/img/photo.jpg",
+                productos: "[4788,4555,2222]"
+            };
+            clientsHTTPProvider.update(cli);
         }
 
-        function setClientTest() {
-            let client = {
-                id: "001",
+        function deleteClient(c_id) {
+            clientsHTTPProvider.deleteClient(c_id);
+        }
+
+        function addNewClient(c) {
+            let cli = c || {
                 name: "User",
                 subname: "Test",
-                dni: "11223344A",
-                photo: "data/img/users/001.jpg",
-                products: ["4577", "0021", "2562"]
-            }
-            vm.clients.push(client);
-
-            saveClients();
+                dni: "47885566C",
+                photo: "/img/photo.jpg",
+                productos: "[4788,4555,2222]"
+            };
+            //clientsHTTPProvider.add(aux_client);
         }
     }
 })();

@@ -1,6 +1,22 @@
-<ul ng-if="clientsManager.clients.length > 0" class="list-group">
-    <li ng-repeat="client in clientsManager.clients" class="list-group-item">
-        <span class="badge">{{client.products.length}}</span>
-        {{client.name}} {{client.subname}}
-    </li>
-</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>DNI</th>
+            <th>Photo</th>
+            <th>Nº productos</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-if="clientsManager.clients.length > 0" ng-repeat="client in clientsManager.clients">
+            <td>{{client.name}}</td>
+            <td>{{client.subname}}</td>
+            <td>{{client.dni}}</td>
+            <td>{{client.photo}}</td>
+            <td><span class="badge">{{client.productos.length}}</span></td>
+            <td><button class="btn btn-default">Modificar</button></td>
+        </tr>
+    </tbody>
+</table>
