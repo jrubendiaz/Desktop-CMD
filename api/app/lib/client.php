@@ -69,9 +69,12 @@ function postAddClient($request, $response, $args) {
 * @param {id} - client's id
 */
 function putUpdateClient($request, $response, $args) {
-	$computer = json_decode($request->getBody());
+    $client = json_decode($request->getBody());
+
+    echo $client;
+
 	$sql = " UPDATE clients
-			 SET id=:id, name=:name, subname=:subname, dni=:dni, productos=:productos
+			 SET name=:name, subname=:subname, dni=:dni, photo=:photo, productos=:productos
 			 WHERE id='" . $args['id'] . "'";
     try {
         $db = DB::getInstance();
