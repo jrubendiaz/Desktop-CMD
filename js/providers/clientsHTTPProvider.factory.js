@@ -45,8 +45,8 @@
 
         function addNewClient(client) {
             let aux_client = JSON.stringify(client);
-            $http.post(_url, aux_client).then(res => {
-                console.log(res);
+            return $http.post(_url, aux_client).then(res => {
+                return res;
             })
         }
 
