@@ -4,15 +4,16 @@
 *   Get all clients in the system
 */
     function getAllClients() {
+
         $sql = "SELECT * FROM clients";
         try {
             $db = DB::getInstance();
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $db->query($sql);
-            $computers = $stmt->fetchAll(PDO::FETCH_OBJ);
+            $clients = $stmt->fetchAll(PDO::FETCH_OBJ);
             DB::close();
-            echo json_encode($computers);
+            echo json_encode($clients);
         } catch(PDOException $e) {
             echo '{"error":{"text":'. $e->getMessage() .'}}';
         }
@@ -30,9 +31,9 @@
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $db->query($sql);
-            $computer = $stmt->fetchAll(PDO::FETCH_OBJ);
+            $clients = $stmt->fetchAll(PDO::FETCH_OBJ);
             DB::close();
-            echo json_encode($computer);
+            echo json_encode($clients);
         } catch(PDOException $e) {
             echo '{"error":{"text":'. $e->getMessage() .'}}';
         }

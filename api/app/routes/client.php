@@ -26,4 +26,5 @@ $app->put('/clients/{id}', 'putUpdateClient');
 *   DELETE specific client
 */
 $app->delete('/clients/{id}', 'deleteClientInstance');
+
 ?>
