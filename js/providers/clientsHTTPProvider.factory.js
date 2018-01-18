@@ -14,7 +14,9 @@
             update:updateClient,
             deleteClient: deleteClient
         };
-        var _url = 'http://127.0.0.1:80/api/api/clients';
+        const server = window.location.origin;
+        const path = window.location.pathname;
+        var _url = server + path + 'api/clients';
 
         return service;
 
