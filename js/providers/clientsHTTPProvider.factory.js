@@ -9,6 +9,7 @@
     function clientsHTTPProvider($http) {
         var service = {
             getAll:getAll,
+            getClientDetails: getClientDetails,
             add:addNewClient,
             update:updateClient,
             deleteClient: deleteClient
@@ -32,6 +33,14 @@
             })
         }
 
+        function getClientDetails(c_id) {
+            let aux_url = _url + "/" + c_id;
+            let client_res = $http.get(aux_url);
+            return client_res.then(res => {
+                return res.data[0];
+            })
+        }
+
         function addNewClient(client) {
             let aux_client = JSON.stringify(client);
             $http.post(_url, aux_client).then(res => {
@@ -44,8 +53,8 @@
             console.log(client);
             let cli = JSON.stringify(client);
 
-            $http.put(aux_url, cli).then(res => {
-                console.log(res);
+            return $http.put(aux_url, cli).then(res => {
+                return res;
             })
         }
 

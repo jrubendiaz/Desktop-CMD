@@ -12,10 +12,10 @@
                 templateUrl: 'views/clientsManagerPanel.html',
                 controllerAs: 'clientsManager'
             })
-            .when("/client:id", {
-                controller: 'clientProfileController',
-                templateUrl: 'views/clientProfile.html',
-                controllerAs: 'clientProfile'
+            .when("/editClient/:id", {
+                controller: 'editClientController',
+                templateUrl: 'views/editClient.html',
+                controllerAs: 'editClient'
             })
             .when("/newClient", {
                 controller: 'newClientController',
